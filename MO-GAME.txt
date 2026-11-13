@@ -1,0 +1,30 @@
+TAM QUỐC SÁT - QUỐC CHIẾN (96 TƯỚNG)
+HƯỚNG DẪN MỞ GAME TRÊN WINDOWS 10/11
+
+1. Tải tệp tam-quoc-sat-chay-offline.zip về máy.
+2. Nhấn chuột phải vào tệp ZIP, chọn Extract All... (Giải nén tất cả).
+3. Mở thư mục vừa giải nén.
+4. Nhấn chuột phải vào index.html -> Open with -> Google Chrome hoặc Microsoft Edge.
+   Cách khác: mở Chrome, nhấn Ctrl+O rồi chọn index.html.
+5. Khi thấy màn hình "Tam Quốc Sát - Quốc Chiến", chọn 5–8 người để bắt đầu.
+
+LƯU Ý QUAN TRỌNG
+
+- KHÔNG xem file HTML trực tiếp trong khung xem trước mã nguồn của ChatGPT.
+  Bạn phải TẢI TỆP về máy, GIẢI NÉN, sau đó mở bằng Chrome/Edge.
+- Nếu hiện mã HTML, hãy kiểm tra xem bạn có đang mở bằng VS Code/Notepad không.
+- Nếu Chrome đang ở chế độ xem mã nguồn (địa chỉ bắt đầu bằng view-source:),
+  hãy bỏ "view-source:" khỏi địa chỉ và mở lại file index.html.
+- Nếu tên tệp hiện là index.html.txt, hãy bật tùy chọn View > File name
+  extensions trong File Explorer rồi đổi về đúng index.html.
+- Game chơi offline: không cần mạng, không cần cài Node.js hay máy chủ.
+- Tất cả 96 ảnh tướng đã được nhúng sẵn trong file index.html.
+
+ĐÃ KIỂM THỬ
+
+- Game có 96 thẻ tướng thuộc 4 phe.
+- Chọn cặp tướng cùng phe và chơi được với 4–7 bot.
+- Đã kiểm tra thư viện tướng, dùng bài, kỹ năng và chơi qua 3 vòng.
+
+Nếu vẫn gặp lỗi: chụp ảnh màn hình, thanh địa chỉ của trình duyệt và
+tên file sau khi giải nén, gửi lại để kiểm tra chính xác.
