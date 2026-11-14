@@ -1,0 +1,7 @@
+{
+  "name": "tam-quoc-sat-quoc-chien",
+  "version": "2.0.0-alpha.1",
+  "private": true,
+  "description": "Bản thử nghiệm Quốc Chiến offline với bàn đấu 3D và 96 thẻ tướng",
+  "scripts": {"test": "node --test tests/game.test.mjs", "check": "node --check src/data/catalog.js && node --check src/data/assets.js && node --check src/game/engine.js && node --check src/ui/render.js && node --check src/ui/effects.js && node --check src/ui/interaction.js && node --check src/main.js"}
+}

@@ -1,0 +1,43 @@
+name: Tam Quoc Sat V2 - extract images and test
+
+on:
+  push:
+    branches: [feature/game-v2]
+    paths:
+      - 'v2/src/**'
+      - 'v2/scripts/**'
+      - 'v2/tests/**'
+      - 'v2/index.html'
+      - '.github/workflows/v2-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout feature branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/game-v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Extract images from original index.html
+        run: node v2/scripts/extract-assets.mjs
+      - name: Check JavaScript syntax
+        run: npm run check --prefix v2
+      - name: Run game tests
+        run: npm test --prefix v2
+      - name: Commit generated assets to the feature branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add v2/assets
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(v2): restore 96 hero assets [skip ci]"
+            git push origin HEAD:feature/game-v2
+          fi

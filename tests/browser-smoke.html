@@ -1,0 +1,27 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><base href="../">
+<link rel="stylesheet" href="styles/base.css"><link rel="stylesheet" href="styles/floating.css"><link rel="stylesheet" href="styles/immersive.css"></head>
+<body><div id="app"></div><div id="battle-fx-layer" aria-hidden="true"></div>
+<script src="src/data/catalog.js"></script><script src="src/data/assets.js"></script><script src="src/game/engine.js"></script><script src="src/ui/render.js"></script><script src="src/ui/effects.js"></script><script src="src/ui/interaction.js"></script><script src="src/main.js"></script>
+<script>
+window.addEventListener('load',()=>{
+ const errors=[];
+ try {
+  if(G.length!==96)throw Error('Không đủ 96 tướng');
+  if(!document.querySelector('.lobby'))throw Error('Không hiển thị màn chọn trận');
+  prepare(5);
+  if(document.querySelectorAll('.pair').length<5)throw Error('Không hiển thị cặp tướng');
+  init(5,0);
+  if(P.length!==5)throw Error('Không đủ 5 người chơi');
+  if(!document.querySelector('.stage'))throw Error('Không hiển thị bàn đấu');
+  if(document.querySelectorAll('.seat').length!==5)throw Error('Không hiển thị đủ ghế');
+  if(document.querySelectorAll('.floating-hand .gc').length!==4)throw Error('Không hiển thị đủ bài');
+  if(!document.querySelector('.seat[data-player-id="0"]'))throw Error('Không có định danh ghế');
+  if(!document.querySelector('.floating-hand .gc[data-hand-index="0"]'))throw Error('Không có định danh bài');
+  if(!document.querySelector('.tbl .pile'))throw Error('Không có chồng bài 3D');
+ } catch(e) { errors.push(String(e.stack||e)); }
+ document.documentElement.dataset.smoke=errors.length?'FAIL':'PASS';
+ document.documentElement.dataset.smokeDetails=errors.join(' | ');
+ const result=document.createElement('output');result.id='smoke-result';result.textContent=errors.length?'SMOKE FAIL: '+errors.join(' | '):'SMOKE PASS: 96 tướng, 5 người chơi, bàn đấu, bài trên tay, vị trí FX';
+ result.style.cssText='position:fixed;top:64px;left:12px;background:#112;color:#fff;padding:8px;z-index:999';document.body.appendChild(result);
+});
+</script></body></html>
